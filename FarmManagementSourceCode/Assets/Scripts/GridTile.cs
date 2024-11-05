@@ -2,11 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 [System.Serializable]
-public class Tile : MonoBehaviour
+public class GridTile : MonoBehaviour
 {
     public int row;
     public int col;
     public Vector3 tilePos;
+    public bool isOccupied;
 
     /// <summary>
     /// Set the position of this grid cell on the grid
@@ -20,8 +21,10 @@ public class Tile : MonoBehaviour
         row = _row;
         col = _col;
         tilePos = _pos;
+        isOccupied = false;
         //Debug.Log("<color=red>" + $" row { _row} col { _col} pos { _pos} " + "</color>");
-        Instantiate(demoCube, tilePos,Quaternion.identity);
+         //GameObject cube  =Instantiate(demoCube, tilePos,Quaternion.identity);
+         //cube.name = "Row" + _row + "Col" + _col + "Pos" + _pos;
     }
 
 }

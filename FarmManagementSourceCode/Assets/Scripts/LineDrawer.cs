@@ -20,12 +20,19 @@ public class LineDrawer : MonoBehaviour
             return;
         }
     }
+    /// <summary>
+    /// Adding the points in a list for drawing the Line Renderer
+    /// </summary>
+    /// <param name="linePoints"></param>
     public void AddPoints(Vector3 linePoints)
     {
         points.Add(linePoints);
         //Debug.Log(linePoints);
     }
 
+    /// <summary>
+    /// Drawing the Line Renderer
+    /// </summary>
     public void DrawLine()
     {
         // Set the number of positions in the LineRenderer

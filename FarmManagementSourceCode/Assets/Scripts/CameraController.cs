@@ -20,19 +20,23 @@ public class CameraController : MonoBehaviour
         Rotate();
 
     }
-
+    /// <summary>
+    /// Rotate the Camera
+    /// </summary>
     private void Rotate()
     {
         if (Input.GetMouseButton(2)) // Middle mouse button
         {
             float rotX = Input.GetAxis("Mouse X") * rotateSpeed * Time.deltaTime;
             float rotY = Input.GetAxis("Mouse Y") * rotateSpeed * Time.deltaTime;
-
             transform.Rotate(Vector3.up, rotX, Space.World);
             transform.Rotate(Vector3.left, rotY, Space.Self);
         }
     }
 
+    /// <summary>
+    /// Zoom In Out based on Mouse Scroll
+    /// </summary>
     private void Zoom()
     {
         float scroll = Input.GetAxis("Mouse ScrollWheel");
@@ -42,7 +46,9 @@ public class CameraController : MonoBehaviour
             Camera.main.fieldOfView = Mathf.Clamp(Camera.main.fieldOfView, minZoom, maxZoom);
         }
     }
-
+    /// <summary>
+    /// Pan the Camera
+    /// </summary>
     private void Pan()
     {
         if (Input.GetMouseButtonDown(1)) // Right mouse button
